@@ -21,7 +21,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100svh;
+    min-height: 100svh;
     gap: 1rem;
     background-image: linear-gradient(to top, #f9d07d 10%, #cb4558);
     background-repeat: no-repeat;
