@@ -1,6 +1,6 @@
 const itemCont = document.getElementById(`items`);
 const input = document.getElementById(`inputItems`)
-let items = ["Delete Me!"]
+let items = ["Delete Me!"];
 
 function renderItems(){
     itemCont.innerHTML = null;
@@ -34,6 +34,7 @@ function addItems(){
         items.push(value)
         saveItems()
         renderItems()
+        input.value = ""
     }
     
 }
@@ -45,7 +46,12 @@ function saveItems(){
 
 function loadItems(){
     let itemsVal = localStorage.getItem("items")
-    items = JSON.parse(itemsVal)
+    if (itemsVal){
+        items = JSON.parse(itemsVal)
+    }
+    else{
+        items = ["Delete Me!"]
+    }
     renderItems()
 }
 
